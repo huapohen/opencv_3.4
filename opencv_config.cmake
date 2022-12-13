@@ -1,0 +1,6 @@
+if(${CMAKE_SYSTEM_NAME} STREQUAL QNX)
+  set(OpenCV_INCLUDE_DIRS ${CMAKE_SOURCE_DIR}/3rdparty/opencv/linux/include)
+  file(GLOB OpenCV_LIBS ${CMAKE_SOURCE_DIR}/3rdparty/opencv/lib/qnx/*.so)
+else()
+  find_package(OpenCV 3.4 REQUIRED PATHS /usr)
+endif()
